@@ -95,26 +95,27 @@
   var form = document.getElementById('multiplying-form');
   // create fn formSubmit 
   // evt.p.. to prevent action=/nope
+
   function formSubmit(evt) {
     evt.preventDefault();
 
-    console.log('yay')
-    // create variables of user input
+    // create variables
     var multsNum = document.getElementById('mults-of');
     var maxNum = document.getElementById('max');
-    var arrayMults = []
+    var multsArray = [];
 
-    function returnArray() { 
-      for (var i =0, i < maxNum, i++) {
-        if (i % multsNum === 0) {
-          arrayMults.push(i);
-        }};
-      }
 
-  } // close fn formSubmit
+    for (var i = 0; i <= maxNum.value; i++) {
+      if (i % multsNum.value === 0) {
+        multsArray.push(i);
+      } // end if
+    } // end for loop
 
+    alert(multsArray);
+  }
   // add EL to form submit
   form.addEventListener('submit', formSubmit);
+
 
 </script>
 
@@ -251,6 +252,8 @@ nottuB.addEventListener('click', reverseString);
 <script>
   "use strict";
   // put your code here
+
+
 </script>
 
 <div class="hint">
