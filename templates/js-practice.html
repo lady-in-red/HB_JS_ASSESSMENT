@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<script src="https://code.jquery.com/jquery.js"></script>
 <h1>JavaScript Practice</h1>
 <p>
   For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code>
@@ -37,10 +38,15 @@
 <script>
   "use strict";
   // code here for above problem
+  // set button variable = show me a popup button
   var button = document.getElementById('popup-alert-button');
+
+  // set function of popup alert to alertClick
   function alertClick() {
     alert('This is an alert pop up.');
   }
+
+  // add EL to var buton. On click, run fn alertClick
   button.addEventListener('click', alertClick);
 
 </script>
@@ -85,6 +91,30 @@
   "use strict";
 
   // code here for the above problem
+  // set form = form with id'multiplying-form'
+  var form = document.getElementById('multiplying-form');
+  // create fn formSubmit 
+  // evt.p.. to prevent action=/nope
+  function formSubmit(evt) {
+    evt.preventDefault();
+
+    console.log('yay')
+    // create variables of user input
+    var multsNum = document.getElementById('mults-of');
+    var maxNum = document.getElementById('max');
+    var arrayMults = []
+
+    function returnArray() { 
+      for (var i =0, i < maxNum, i++) {
+        if (i % multsNum === 0) {
+          arrayMults.push(i);
+        }};
+      }
+
+  } // close fn formSubmit
+
+  // add EL to form submit
+  form.addEventListener('submit', formSubmit);
 
 </script>
 
@@ -108,15 +138,24 @@
   "use strict";
 
 //  Here's a stub of a function you can use!
+var nottuB = document.getElementById('reverse-string-button')
 
-//  function reverseString(evt) {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+ function reverseString(evt) {
+   var msg = "Porcupines are cute";
+   msg = msg.split('');
+
+   // do some stuff here to reverse that string into a new variable
+   var newMsg = [];
+   for (var i = 0; i < msg.length; i++) {
+    // found on js docs when looking at arrays
+    // append letter to beggining of array
+    newMsg.unshift(msg[i]);
+   } // end for loop
+   newMsg = newMsg.join('');
+   alert(newMsg);
+ } // close fn reverseString
+
+nottuB.addEventListener('click', reverseString);
 
 </script>
 
@@ -143,6 +182,8 @@
 <script>
   "use strict";
   // code here for above problem
+  $('.find-me').on('click', function (evt) { alert('Pop-up!'); });
+
 </script>
 
 <div class="hint">
@@ -175,6 +216,10 @@
 <script>
   "use strict";
   // put your code here
+  $('#make-a-porcupine').on('click', function (evt) {
+    $('#cute-porcupine-image').delay(1000).slideDown(2000);
+  });
+
 </script>
 
 <div class="hint">
