@@ -252,6 +252,11 @@ nottuB.addEventListener('click', reverseString);
 <script>
   "use strict";
   // put your code here
+  $('#agreeable-form').on('submit', function (evt) {
+    evt.preventDefault();
+    var food = $('#favorite-food-input').val();
+    alert('I like ' + food + ', too.');
+  } );
 
 
 </script>
