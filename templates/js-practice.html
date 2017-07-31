@@ -290,6 +290,25 @@ nottuB.addEventListener('click', reverseString);
 <script>
   "use strict";
   // put your code here
+
+  $('#play-guessing-game').on('click', 
+    function (evt) {
+      evt.preventDefault();
+      document.getElementById("play-guessing-game").disabled = true;
+
+
+      // est variables for guess and number
+      var secretNum = Math.random(1,101);
+      var userGuess = $('#try-this-number').val();
+
+      if (userGuess === secretNum) {
+        alert('That\'s correct! )
+      } else {
+
+      }
+    } // ends callback fn
+  );
+
 </script>
 
 
